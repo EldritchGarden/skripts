@@ -1,0 +1,26 @@
+on mine:
+    set {_nbt} to "display;Lore" tag of nbt item compound of event-player's tool
+    {_nbt} contains "Hammer":
+        set {_1} to location of event-block
+        set {_2} to location of event-block
+        event-player is not sneaking:
+            add 1 to y-coord of {_1}
+            subtract 1 from y-coord of {_2}
+            event-player's horizontal facing is east or west:
+                add 1 to z-coord of {_1}
+                subtract 1 from z-coord of {_2}
+            else if event-player's horizontal facing is north or south:
+                add 1 to x-coord of {_1}
+                subtract 1 from x-coord of {_2}
+        else:
+            add 1 to x-coord of {_1}
+            add 1 to z-coord of {_1}
+            subtract 1 from x-coord of {_2}
+            subtract 1 from z-coord of {_2}
+
+        event-player's gamemode is creative:
+            loop blocks within {_1} and {_2}:
+                set loop-block to air
+        else:
+            loop blocks within {_1} and {_2}:
+                break loop-block naturally using event-player's tool

@@ -1,0 +1,4 @@
+on init:
+    # iron hammer
+    set {_iron_hammer} to iron pickaxe with lore "Hammer" named "Iron Hammer"
+    register new shaped recipe for {_iron_hammer} using iron ingot, iron block, iron ingot, air, stick, air, air, stick and air with id "iron_hammer"

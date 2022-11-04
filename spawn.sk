@@ -1,0 +1,6 @@
+command /spawn:
+    description: Teleport to spawn
+    permission: skript.spawn
+    executable by: players
+    trigger:
+        teleport player to location at -52, 178, -24
