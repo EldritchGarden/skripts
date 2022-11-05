@@ -1,7 +1,25 @@
+command /give_custom <text> <player=%player%>:
+    description: give custom skript items
+    permission: minecraft.command.give
+    executable by: players
+    trigger:
+        if (indices of {custom_items::*}) contains arg-1:
+            give {custom_items::%arg-1%} to arg-2
+        else:
+            send "Unknown Item! Custom Items:"
+            loop (indices of {custom_items::*}):
+                send " - %loop-value%" to player
+
 on init:
+    # custom items are stored here, accessed by {custom_items::<name>}
+    # when registering a custom item it should be added to this list
+    # so that it can be gotten with the give_custom command
+    delete {custom_items::*} # ensure old items are not retained
+
     # iron hammer
     set {_iron_hammer} to iron pickaxe with lore "Hammer" named "Iron Hammer"
     register new shaped recipe for {_iron_hammer} using iron ingot, iron block, iron ingot, air, stick, air, air, stick and air with id "iron_hammer"
+    set {custom_items::iron_hammer} to {_iron_hammer}
 
     # rotten flesh to leather
     register new campfire recipe for leather using rotten flesh with id "campfire_leather" with cook time 30 seconds

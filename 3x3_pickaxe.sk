@@ -1,5 +1,5 @@
 on mine:
-    set {_nbt} to "display;Lore" tag of nbt item compound of event-player's tool
+    set {_nbt} to "display;Lore" tag of nbt compound of event-player's tool
     {_nbt} contains "Hammer":
         set {_1} to location of event-block
         set {_2} to location of event-block
@@ -23,4 +23,6 @@ on mine:
                 set loop-block to air
         else:
             loop blocks within {_1} and {_2}:
-                break loop-block naturally using event-player's tool
+                if loop-block is not bedrock:
+                    break loop-block naturally using event-player's tool
+            damage event-player's tool by 3
