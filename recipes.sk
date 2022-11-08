@@ -24,3 +24,6 @@ on init:
     # rotten flesh to leather
     register new campfire recipe for leather using rotten flesh with id "campfire_leather" with cook time 30 seconds
 
+    # saddle
+    register new shaped recipe for saddle using leather, leather, leather, leather, iron ingot, leather, air, air, and air with id "saddle"
+
