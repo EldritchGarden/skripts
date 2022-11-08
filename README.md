@@ -10,10 +10,15 @@ By default breaks a vertical area in front of the player. Sneak to break a horiz
 ### Iron Hammer
 2 sticks, 2 iron ingots, 1 iron block.
 
-![image](https://user-images.githubusercontent.com/26440900/200186092-2860d3a1-ff67-4ee7-96de-3ec7a6d01f04.png)
+![image](https://user-images.githubusercontent.com/26440900/200673195-d284f374-7490-46b3-911c-6ad094ebe945.png)
 
 ### Leather
 Cook rotten flesh on a campfire. 30s cook time.
+
+### Saddle
+5 leather, 1 iron ingot
+
+![image](https://user-images.githubusercontent.com/26440900/200672910-2159ff5b-99ca-49c2-968c-eb00eded7846.png)
 
 ## Skripts:
 * 3x3_pickaxe.sk
