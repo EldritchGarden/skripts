@@ -8,10 +8,10 @@ command /sethome:
 	permission: skript.home
 	executable by: players
 	trigger:
-		if {homes::%uuid of player%} is not set:
-			make player execute command "/dmarker add %player% set:Homes"
-		else:
-			make player execute command "/dmarker movehere %player% set:Homes"
+#		if {homes::%uuid of player%} is not set:
+#			make player execute command "/dmarker add %player% set:Homes"
+#		else:
+#			make player execute command "/dmarker movehere %player% set:Homes"
 
 		set {homes::%uuid of player%} to location of player
 		message "Set your home to <grey>%location of player%<reset>"
@@ -25,3 +25,4 @@ command /home:
 			message "You have not set your home yet! Use /sethome to set it"
 		else:
 			teleport player to {homes::%uuid of player%}
+
